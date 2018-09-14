@@ -21,14 +21,20 @@ class Base_controller
     		}
      end
 
-	def process_records(&block)
+	def process_records
     		response = HTTParty.get(url, headers: headers)
      	raise StandardError.new(response.parsed_response) unless response.success?
-     	result = JSON.parse(response.body)
-    		return result
+     	result = response ["data"]
+    	return result
   	end 
 end
 
 peoples = Base_controller.new()
 
-puts JSON.pretty_generate(peoples.process_records)
+newdata = JSON.pretty_generate(peoples.process_records)
+
+puts newdata
+
+
+
+

@@ -11,4 +11,6 @@ Rails.application.routes.draw do
 
   get '/base/process_records' => 'base#process_records'
 
+  get '/base/count_letters' => 'base#count_letters'
+
 end

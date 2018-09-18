@@ -8,4 +8,7 @@ Rails.application.routes.draw do
   end
 
   root to: "main#index"
+
+  get '/base/process_records' => 'base#process_records'
+
 end

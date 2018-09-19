@@ -11,12 +11,8 @@ The landing page will have three button options
 	Shows names, email address, and titles of people from salesloft api
 2. View Letter Count
 	this button will show the frequency of letters in the email addresses of ever person returned
-3. Find Possible Duplicate
+3. Find Possible Duplicate (WIP)
 	Shows table with possible duplicate entries
-
-## Running the tests
-
-Since nothing was return the method to search for duplicate names, this function is tested on script base_controller_test.rb
 
 ### Built With
 

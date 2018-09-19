@@ -77,19 +77,82 @@ class BaseController < ApplicationController
 
         pdata = process_records()
 
-        puts "hello #{pdata}"
+        #puts "#{pdata}"
 
-        #x = 0
+        @dataobj ={}
 
-        #while x <19
+        names = []
 
-            #curname = @results[x].first_name
+        x = 0
 
-            #puts curname
+        while x < pdata.length
 
-            #x+= 1
-            #break if x > 10 #@results.length
-        #end    
+            #p pdata[x]
+
+            curname = pdata[x]["first_name"]
+
+            names.push(pdata[x]["first_name"])
+
+            y = 0
+
+            while y < curname.length
+
+                curletter = curname[y]
+
+                search = curname.sub("#{curletter}", ".")
+
+                #curname[y] = "."
+
+                #puts curname
+
+                puts search
+
+                z = 0
+
+                while z < pdata.length
+
+                    unless z == x
+
+                        obj = /"#{search}"/.match(pdata[z]["first_name"])
+
+                        #puts obj
+
+                        #puts pdata[z]["first_name"]
+
+                        if (obj != nil)
+
+                            @dataobj = {"#{pdata[x]["first_name"]}" => pdata[z]["first_name"]}
+
+                            puts @dataobj
+
+                        else
+
+
+                        end
+
+
+                        z += 1
+                    else
+
+                        z += 1
+                    end
+                end   
+
+                y += 1
+
+                #puts names[x] #pdata[x]["first_name"]
+
+            end 
+
+            x += 1
+
+            if (x == pdata.length)
+
+                @result = "none found !" 
+            
+            end   
+
+        end    
     end     
 
 end

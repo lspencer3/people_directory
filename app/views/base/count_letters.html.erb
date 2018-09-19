@@ -1,4 +1,10 @@
-<table>
+<head>
+  <title>SalesLoft Integration</title>
+  <%= stylesheet_link_tag "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" %>
+</head>
+<div class = "container">
+	<%= button_to "Home",  root_path, method: :get, class: "btn btn-primary"%>
+<table class = "table">
 <tr>
 <th><h1> Letter</h1> </th>
 <th> <h1>Count</h1> </th>	
@@ -11,3 +17,4 @@
 <% end -%>
 
 </table>
+</div>

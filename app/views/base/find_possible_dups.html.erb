@@ -2,9 +2,16 @@
   <title>SalesLoft Integration</title>
   <%= stylesheet_link_tag "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" %>
 </head>
+<div class = "container">
+	<div class = "container">
 
-<h1>Duplicates</h1>
+		<%= button_to "Home",  root_path, method: :get, class: "btn btn-primary"%>
 
-<%= button_to "Home",  root_path, method: :get, class: "btn btn-primary"%>
-<h2> <%= @result %> </h2>
-<h2> <%= @obj %> </h2>
+		<h1>Duplicates</h1>
+	</div>
+
+	<div class = "container">
+		<h3> <%= @result %> </h3>
+		<h3> <%= @obj %> </h3>
+	</div>
+</div>

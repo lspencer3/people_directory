@@ -3,17 +3,21 @@
   <%= stylesheet_link_tag "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" %>
 </head>
 <div class = "container">
-	<%= button_to "Home",  root_path, method: :get, class: "btn btn-primary"%>
-	<table class = "table">
-		<tr>
-			<th><h1> Letter</h1> </th>
-			<th> <h1>Count</h1> </th>	
-		</tr>
-		<% @sortedhash.each do |key,value| -%>
+	<div class ="container">
+		<%= button_to "Home",  root_path, method: :get, class: "btn btn-primary"%>
+	</div>
+	<div class = "container">
+		<table class = "table">
 			<tr>
-				<td><%= key %> </td>
-				<td><%= value %></td>
+				<th><h1> Letter</h1> </th>
+				<th> <h1>Count</h1> </th>	
 			</tr>
-		<% end -%>
-	</table>
+			<% @sortedhash.each do |key,value| -%>
+				<tr>
+					<td><%= key %> </td>
+					<td><%= value %></td>
+				</tr>
+			<% end -%>
+		</table>
+	</div>
 </div>

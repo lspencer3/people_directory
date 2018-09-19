@@ -3,22 +3,23 @@
  <%= stylesheet_link_tag "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" %>
 </head>
 <div class = "container">
+
+	<%= button_to "Home",  root_path, method: :get, class: "btn btn-primary"%>
 	<h1>People</h1>
-
-
-	<%= button_to "Home",  root_path, method: :get, class: "btn btn-primary"%></div>
+	</div>
 
 	<div class = "container">
 
-		<table class = "table">
+		<table class = "table-hover">
 
 
 			<% @result.each do |person| %>
 				<tr>
-					<td>	
-						<h2> <%= "#{person["first_name"]}  #{person["last_name"]}" %> </h2>
-						<h4> <%= person["email_address"] %> </h4>
-						<h4> <%= person["title"] %> </h4>
+					<td><p>	
+							<h2> <%= "#{person["first_name"]}  #{person["last_name"]}" %> </h2>
+							<h4> <%= person["email_address"] %> </h4>
+							<h4> <%= person["title"] %> </h4>
+						</p>
 					</td>
 				</tr>
 			<% end %>

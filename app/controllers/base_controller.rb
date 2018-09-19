@@ -7,8 +7,6 @@ require "json"
 
 
 class BaseController < ApplicationController
-
-	def initialize
 	
     	def url
     		"https://api.salesloft.com/v2/people.json"
@@ -20,8 +18,6 @@ class BaseController < ApplicationController
         	}
         end
 
-    end
-
 	def process_records
     	response = HTTParty.get(url, headers: headers)
      	raise StandardError.new(response.parsed_response) unless response.success?
@@ -30,48 +26,6 @@ class BaseController < ApplicationController
         #render plain: @result.inspect
     	#return @result
   	end 
-
-    def count_letters
-
-        process_records()
-
-        #response = HTTParty.get(url, headers: headers)
-        #raise StandardError.new(response.parsed_response) unless response.success?
-        #result = response ["data"]
-
-        longemailstring = ""
-
-        alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p","q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
-
-        frequencyhash = {}
-
-        @result.each do |person|
-
-            #puts "current email address is: #{person["email_address"]} " 
-
-            longemailstring += "#{person["email_address"]}"
-        end
-
-        #puts "this is the email array #{longemailstring}"
-
-
-        alphabet.each do |letter|
-
-            #puts "#{letter}: " + longemailstring.count(letter).to_s
-
-            currenthash = {"#{letter}" => longemailstring.count(letter)}
-
-            frequencyhash = frequencyhash.merge!(currenthash)
-
-            #puts "hash: #{frequencyhash}" 
-        end 
-
-        #puts frequencyhash 
-
-        @sortedhash = frequencyhash.sort_by {|_key, value| value}.reverse
-
-        #puts @sortedhash
-    end
 
     # not finished with this one but this was my train of thought on searching for possible duplicates
     def find_possible_dups
@@ -166,6 +120,46 @@ end
 
 #puts newdata
 
+
+=begin 
+    def count_letters
+
+        process_records()
+
+        longemailstring = ""
+
+        alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p","q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
+
+        frequencyhash = {}
+
+        @result.each do |person|
+
+            #puts "current email address is: #{person["email_address"]} " 
+
+            longemailstring += "#{person["email_address"]}"
+        end
+
+        #puts "this is the email array #{longemailstring}"
+
+
+        alphabet.each do |letter|
+
+            #puts "#{letter}: " + longemailstring.count(letter).to_s
+
+            currenthash = {"#{letter}" => longemailstring.count(letter)}
+
+            frequencyhash = frequencyhash.merge!(currenthash)
+
+            #puts "hash: #{frequencyhash}" 
+        end 
+
+        #puts frequencyhash 
+
+        @sortedhash = frequencyhash.sort_by {|_key, value| value}.reverse
+
+        #puts @sortedhash
+    end
+=end
 
 
 

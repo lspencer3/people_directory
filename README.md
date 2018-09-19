@@ -1,16 +1,10 @@
-#This App Explores the Salesloft API People Data
 
-Author:
-Lauren Spencer
+# People Directory
 
-Built with:
-Ruby
+This app explores the salesloft api people data through various methods.
 
+## Getting Started
 
-Deployed onto:
-Heroku
-
-How to Use:
 The landing page will have three button options
 
 1. View People
@@ -20,7 +14,21 @@ The landing page will have three button options
 3. Find Possible Duplicate
 	Shows table with possible duplicate entries
 
-Tests:
-Since nothing was return the method to search for duplicate names is tested on script base_controller_test.rb
+## Running the tests
+
+Since nothing was return the method to search for duplicate names, this function is tested on script base_controller_test.rb
+
+### Built With
+
+Ruby
+
+## Deployment
+
+Heroku:
+
+## Authors
+
+**Lauren Spencer** 
+
 
 

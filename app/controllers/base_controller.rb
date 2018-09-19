@@ -75,9 +75,7 @@ class BaseController < ApplicationController
 
     def find_possible_dups
 
-        process_records()
-
-        pdata = @results
+        pdata = process_records()
 
         puts "hello #{pdata}"
 

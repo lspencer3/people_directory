@@ -26,46 +26,62 @@ class BaseController < ApplicationController
     	response = HTTParty.get(url, headers: headers)
      	raise StandardError.new(response.parsed_response) unless response.success?
      	@result = response ["data"]
-      #puts @result
-      #render plain: @result.inspect
+        #puts @result
+        #render plain: @result.inspect
     	#return @result
   	end 
 
-  def count_letters
+    def count_letters
 
-    response = HTTParty.get(url, headers: headers)
-    raise StandardError.new(response.parsed_response) unless response.success?
-    result = response ["data"]
+        process_records()
 
-    emailstring = ""
+        #response = HTTParty.get(url, headers: headers)
+        #raise StandardError.new(response.parsed_response) unless response.success?
+        #result = response ["data"]
 
-    alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p","q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
+        longemailstring = ""
 
-    frequencyarr = []
+        alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p","q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
 
-    result.each do |person|
+        frequencyhash = {}
 
-    #puts "current email address is: #{person["email_address"]} " 
+        @result.each do |person|
 
-    emailstring += "#{person["email_address"]}"
+            #puts "current email address is: #{person["email_address"]} " 
+
+            longemailstring += "#{person["email_address"]}"
+        end
+
+        #puts "this is the email array #{longemailstring}"
+
+
+        alphabet.each do |letter|
+
+            #puts "#{letter}: " + longemailstring.count(letter).to_s
+
+            currenthash = {"#{letter}" => longemailstring.count(letter)}
+
+            frequencyhash = frequencyhash.merge!(currenthash)
+
+            #puts "hash: #{frequencyhash}" 
+        end 
+
+        #puts frequencyhash 
+
+        @sortedhash = frequencyhash.sort_by {|_key, value| value}.reverse
+
+        #puts @sortedhash
 
     end
 
-    puts "this is the email array #{emailstring}"
+    def find_possible_dups
 
+        process_records()
 
-    alphabet.each do |letter|
-      #puts "#{letter}: " + emailstring.count(letter).to_s
+        
 
-      addhash = {"#{letter}" => emailstring.count("#{letter}")}
-
-      frequencyarr.push(addhash)
-
-    end 
-
-    puts frequencyarr 
-
-  end
+        #for i in
+    end     
 
 end
 

@@ -1,26 +1,27 @@
 <div id="root"></div>
-<div class = ".container-fluid">
-<div class = "container" style="margin-top: 50px">
-<div class ="row">
-<div class ="col-lg">
-<h1 class="text-center">
-<%="Welcome to the Salesloft People Directory"%>
-</h1>
-</div>
-</div>
-</div>
-<div class = "container" style="margin-top: 100px">
-<div class ="row">
-<div class ="col-sm">
-<%= button_to "View People", base_process_records_path, method: :get, class: "btn btn-primary"%>
-</div>
-<div class ="col-sm">
-<%= button_to "View Letter Count",  base_count_letters_path, method: :get, class: "btn btn-primary"%>
-</div>
-<div class ="col-sm">
-<%= button_to "Find Possible Duplicates",  base_find_possible_dups_path, method: :get, class: "btn btn-primary"%>
-</div>
-</div>
-</div>  
+	<div class = ".container-fluid">
+		<div class = "container" style="margin-top: 50px">
+			<div class ="row">
+				<div class ="col-lg">
+					<h1 class="text-center">
+					<%="Welcome to the Salesloft People Directory"%>
+					</h1>
+				</div>
+			</div>
+		</div>
+		<div class = "container" style="margin-top: 100px">
+			<div class ="row">
+				<div class ="col-md">
+				<%= button_to "View People", base_process_records_path, method: :get, class: "btn btn-primary"%>
+				</div>
+				<div class ="col-md">
+				<%= button_to "View Letter Count",  base_count_letters_path, method: :get, class: "btn btn-primary"%>
+				</div>
+				<div class ="col-md">
+				<%= button_to "Find Possible Duplicates",  base_find_possible_dups_path, method: :get, class: "btn btn-primary"%>
+				</div>
+			</div>
+		</div>
+	</div>  
 </div>
 

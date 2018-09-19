@@ -1,28 +1,30 @@
 <head>
-  <title>SalesLoft Integration</title>
-  <%= stylesheet_link_tag "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" %>
+ <title>SalesLoft Integration</title>
+ <%= stylesheet_link_tag "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" %>
 </head>
 <div class = "container">
-<h1>People</h1>
+	<h1>People</h1>
 
 
-<%= button_to "Home",  root_path, method: :get, class: "btn btn-primary"%></div>
+	<%= button_to "Home",  root_path, method: :get, class: "btn btn-primary"%></div>
 
-<div class = "container">
+	<div class = "container">
 
-<table class = "table">
+		<table class = "table">
 
 
-<% @result.each do |person| %>
-<tr>
-<td>	
-<h2> <%= "#{person["first_name"]}  #{person["last_name"]}" %> </h2>
-<h4> <%= person["email_address"] %> </h4>
-<h4> <%= person["title"] %> </h4>
-</td>
-</tr>
-<% end %>
+			<% @result.each do |person| %>
+				<tr>
+					<td>	
+						<h2> <%= "#{person["first_name"]}  #{person["last_name"]}" %> </h2>
+						<h4> <%= person["email_address"] %> </h4>
+						<h4> <%= person["title"] %> </h4>
+					</td>
+				</tr>
+			<% end %>
 
-</table>
+		</table>
+
+	</div>
 
 </div>>

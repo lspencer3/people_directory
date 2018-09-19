@@ -4,17 +4,16 @@
 </head>
 <div class = "container">
 	<%= button_to "Home",  root_path, method: :get, class: "btn btn-primary"%>
-<table class = "table">
-<tr>
-<th><h1> Letter</h1> </th>
-<th> <h1>Count</h1> </th>	
-</tr>
-<% @sortedhash.each do |key,value| -%>
-<tr>
-<td><%= key %> </td>
-<td><%= value %></td>
-</tr>
-<% end -%>
-
-</table>
+	<table class = "table">
+		<tr>
+			<th><h1> Letter</h1> </th>
+			<th> <h1>Count</h1> </th>	
+		</tr>
+		<% @sortedhash.each do |key,value| -%>
+			<tr>
+				<td><%= key %> </td>
+				<td><%= value %></td>
+			</tr>
+		<% end -%>
+	</table>
 </div>

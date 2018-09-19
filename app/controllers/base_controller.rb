@@ -73,6 +73,7 @@ class BaseController < ApplicationController
         #puts @sortedhash
     end
 
+    # not finished with this one but this was my train of thought on searching for possible duplicates
     def find_possible_dups
 
         pdata = process_records()

@@ -25,7 +25,7 @@ class BaseController < ApplicationController
 	def process_records
     	response = HTTParty.get(url, headers: headers)
      	raise StandardError.new(response.parsed_response) unless response.success?
-     	@result = response ["data"]
+     	return @result = response ["data"]
         #puts @result
         #render plain: @result.inspect
     	#return @result
@@ -71,16 +71,27 @@ class BaseController < ApplicationController
         @sortedhash = frequencyhash.sort_by {|_key, value| value}.reverse
 
         #puts @sortedhash
-
     end
 
     def find_possible_dups
 
         process_records()
 
-        
+        pdata = @results
 
-        #for i in
+        puts "hello #{pdata}"
+
+        #x = 0
+
+        #while x <19
+
+            #curname = @results[x].first_name
+
+            #puts curname
+
+            #x+= 1
+            #break if x > 10 #@results.length
+        #end    
     end     
 
 end

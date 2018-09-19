@@ -5,6 +5,8 @@ This app explores the salesloft api people data through various methods.
 
 ## Getting Started
 
+Download files and run "rails server" in terminal to start up application
+
 The landing page will have three button options
 
 1. View People

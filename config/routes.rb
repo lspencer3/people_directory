@@ -18,5 +18,5 @@ Rails.application.routes.draw do
 
 	#get '/base/count_letters' => 'base#count_letters'
 
-	get '/base/find_possible_dups' => 'base#find_possible_dups'
+	#get '/base/find_possible_dups' => 'base#find_possible_dups'
 end

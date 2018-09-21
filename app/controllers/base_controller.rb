@@ -24,7 +24,6 @@ class BaseController < ApplicationController
      	return @result = response ["data"]
         #puts @result
         #render plain: @result.inspect
-    	#return @result
   	end 
 
 end

@@ -14,15 +14,11 @@ The landing page will have three button options
 2. View Letter Count
 	this button will show a table with the frequency of letters in the email addresses of every person returned
 3. Find Possible Duplicate (WIP)
-	Shows table with possible duplicate entries
+	Shows table with possible duplicate entries based on first name
 
 ### Built With
 
 Ruby
-
-## Deployment
-
-Heroku:
 
 ## Authors
 

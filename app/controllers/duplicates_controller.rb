@@ -83,7 +83,7 @@ class DuplicatesController < BaseController
                     #puts "this is the search result #{searchresult}"
 
 
-                    #if the search yeilded a result add the matching first names to object @datahash that will be returned to the view
+                    #if the search yielded a result, add the matching first names to object @datahash that will be returned to the view
 
                     if (searchresult != nil)
 
